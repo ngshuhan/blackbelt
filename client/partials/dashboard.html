@@ -1,0 +1,27 @@
+<div ng-controller="dashboardController">
+	<div class="a">
+		<nav>
+			<a class="link" href="#/create">Create a New Poll</a> | <button class="link" ng-click="logout()">Logout</button>
+		</nav>
+	</div>
+	<h1>Current Polls:</h1>
+	<input class="search" type="text" placeholder="search...." ng-model="filter_name">
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Survey Question</th>
+			<th>Date Posted</th>
+			<th>Action</th>
+		</tr>
+		<tr ng-repeat="survey in surveys | filter:filter_name" >
+			<td>{{survey._user.name}}</td>
+			<td><a href="#/poll/{{surveys.indexOf(survey)}}">{{survey.question}}</a></td>
+			<td>{{survey.created_at | date:'MMM d, yyyy'}}</a></td>
+			<td ng-show="$storage.user==survey._user.name"><button style="float:none;" ng-click="deleteSurvey(surveys.indexOf(survey))">delete</button></td>
+			<td ng-show="$storage.user!==survey._user.name"></td>
+
+		</tr>
+	</table>
+
+	
+</div>

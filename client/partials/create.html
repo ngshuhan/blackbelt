@@ -1,0 +1,28 @@
+<div ng-controller="surveyController">
+	<div id="a">
+		<nav>
+			<a href="#/dashboard">Cancel</a>
+		</nav>
+	</div>
+	
+	
+	<div id="topic">
+		<h3 style="color:red;font-weight:normal;" ng-show="errors">{{errorMsg}}</h3>
+		<h3>Put the question and options here:  </h3>
+		<form id="post" style="width:50%;">
+			<label>Question: </label> <input style="width:70%;"type="text" ng-model="newSurvey.question"><br>
+			<label>Option 1: </label><input type="text" ng-model="newSurvey.optionOne"><br>
+			<label>Option 2: </label><input type="text" ng-model="newSurvey.optionTwo"><br>
+			<label>Option 3: </label><input type="text" ng-model="newSurvey.optionThree"><br>
+			<label>Option 4: </label><input type="text" ng-model="newSurvey.optionFour"><br>
+			<input style="float:right;" type="submit" value="Create Poll" ng-click="addSurvey()" ng-disabled="!newSurvey.question">
+
+	
+		</form><hr style="margin-top:100px;">
+	</div>
+	
+	
+
+
+
+</div>
