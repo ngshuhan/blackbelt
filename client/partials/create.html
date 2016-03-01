@@ -11,7 +11,11 @@
 	</nav>
 	
 	<div class="container">
-		<h3 style="color:red;font-weight:normal;" ng-show="errors">{{errorMsg}}</h3>
+
+		<div class="alert alert-danger" role="alert" ng-show="errors">
+			<strong>Error!</strong> {{errorMsg}}
+		</div>
+		
 	
 		<form class="form-horizontal col-sm-10">
 			<fieldset>
